@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
-class ssoController extends Controller {
+use App\User;
+
+class SsoController extends Controller {
 	public function login(Request $req)
 	{
 		$client = new Client();
@@ -19,9 +21,6 @@ class ssoController extends Controller {
 		$postBody->setField('redirect_uri', 'http://localhost/PerizinanTerpadu/public/loginsso');
 		$postBody->setField('code', $req->get('code'));
 
-		// {"foo": "bar"}
-
-		// Send the POST request
 		$response = $client->send($request);
 		$body = json_decode($response->getBody());
 		$accessToken = $body->access_token;
@@ -30,7 +29,24 @@ class ssoController extends Controller {
 		$response = $client->get('http://dukcapil.pplbandung.biz.tm/api/penduduk/',['headers'=>['Authorization'=>'Bearer '.$accessToken]]);
 		$data = $response->getBody();
 		$json = json_decode($data);
-		return dd($json);
+
+		$user = User::where('id','=',$json->id)->first();
+		if($user)
+			$peran = $user->peran;
+		else
+		 	$peran = 3;
+
+		\Session::put('id', $json->id);
+		\Session::put('peran', $peran);
+		\Session::put('nama', $json->nama_penduduk);
+
+		return view('home');
+	}
+
+	public function logout()
+	{
+		\Session::flush();
+		return view("home");
 	}
 	/**
 	 * Display a listing of the resource.

@@ -15,7 +15,7 @@ class CreatePerizinanIuiTable extends Migration {
 		Schema::create('perizinan_iui', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('id_pemohon');
+			$table->string('id_pemohon');
 			$table->string('nama_pemohon');
 			$table->string('alamat_pemohon');
 			$table->string('nomor_telepon_pemohon');

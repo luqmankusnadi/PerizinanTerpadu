@@ -15,7 +15,7 @@ class CreatePerizinanSiupTable extends Migration {
 		Schema::create('perizinan_siup', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('id_pemohon');
+			$table->string('id_pemohon');
 			$table->string('nama_pemilik');
 			$table->string('alamat_pemilik');
 			$table->string('tempat_lahir_pemilik');

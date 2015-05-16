@@ -15,7 +15,7 @@ class CreatePerizinanHoTable extends Migration {
 		Schema::create('perizinan_ho', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('id_pemohon');
+			$table->string('id_pemohon');
 			$table->string('alamat_pemilik');
 			$table->string('kebangsaan');
 			$table->string('nama_pengusaha');

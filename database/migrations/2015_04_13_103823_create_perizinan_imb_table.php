@@ -15,7 +15,7 @@ class CreatePerizinanImbTable extends Migration {
 		Schema::create('perizinan_imb', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('id_pemohon');
+			$table->string('id_pemohon');
 			$table->string('nama_pemohon');
 			$table->string('jabatan_pemohon');
 			$table->string('alamat_pemohon');

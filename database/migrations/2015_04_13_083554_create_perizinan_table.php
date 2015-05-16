@@ -15,7 +15,7 @@ class CreatePerizinanTable extends Migration {
 		Schema::create('perizinan', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('id_pemohon');
+			$table->string('id_pemohon');
 			$table->integer('id_izin');
 			$table->string('jenis_izin');
 			$table->string('status')->default("Tertunda");

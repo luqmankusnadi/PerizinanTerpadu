@@ -204,7 +204,7 @@ class PerizinanController extends Controller {
 		$perizinan->updated_by_user = "true";
 		$perizinan->save();
 		if($str=="ho" || $str=="iui")
-			{$url = "../../listformulir";}
+			{$url = "../listformulir";}
 		else
 			{$url = "../uploaddokumenawal/".$str."/".$formulir->id;}
 		$str = "Berhasil Mengunggah Formulir";

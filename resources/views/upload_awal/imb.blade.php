@@ -78,7 +78,7 @@
 
 
 				<div class="col-md-12 text-center">
-					{!! Form::submit('Submit Image', array('class'=>'send-btn ','class'=>'btn-success btn' , 'class'=>'btn get')) !!}
+					{!! Form::submit('Upload', array('class'=>'send-btn ','class'=>'btn-success btn' , 'class'=>'btn get')) !!}
 
 				</div>
 			</div>

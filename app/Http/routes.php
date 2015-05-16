@@ -46,7 +46,9 @@ Route::get('menolakformulir/{str}/{id}', 'PerizinanController@showMenolakFormuli
 
 Route::get('menyembunyikanformulir/{str}/{id}', 'PerizinanController@showMenyembunyikanFormulir');
 
-Route::get('loginsso', 'ssoController@login');
+Route::get('loginsso', 'SsoController@login');
+
+Route::get('logoutsso', 'SsoController@logout');
 
 Route::get('login', 'HomeController@login');
 

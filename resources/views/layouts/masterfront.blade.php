@@ -220,8 +220,8 @@ use App\FormulirIUI;
     <div class="top-menu">
      <ul class="nav pull-right top-menu">
       <?php if(\Session::has('id')==false){ ?>
-          <li><a href="http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=5SLTJ3QStpkyeBcG&redirect_uri=http://localhost/PerizinanTerpadu/public/loginsso&response_type=code">Login</a></li>	
-      <li><a class="logout" href={{URL::to("login")}}>Login</a></li>
+          <li><a class="logout" href="http://dukcapil.pplbandung.biz.tm/oauth/authorize?client_id=5SLTJ3QStpkyeBcG&redirect_uri=http://localhost/PerizinanTerpadu/public/loginsso&response_type=code">Login</a></li>
+
 
       <?php }else{ ?>
       <li>
@@ -229,8 +229,7 @@ use App\FormulirIUI;
           <a href={{URL::to("editprofil")}} class="logout" data-toggle="dropdown"><font color="white">
             {{\Session::get('nama')}} <span class="caret"></font></a>
             <ul class="logout dropdown-menu" role="menu">
-              <li><a class="centered logout"  href={{URL::to("editakun")}}>Edit Profil</a></li>
-              <li><a class="centered logout"  href={{URL::to("logout")}}>Logout</a></li>
+              <li><a class="centered logout"  href={{URL::to("logoutsso")}}>Logout</a></li>
             </ul>
           </div>
         </li>
